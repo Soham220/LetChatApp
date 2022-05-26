@@ -22,13 +22,6 @@ function getData() {firebase.database().ref("/").on('value', function(snapshot) 
     });});}
 getData();
 
-function redirectToRoomName()
-{
-    console.log(name);
-    localStorage.setItem("room_name", name);
-    window.location = "index.html";
-}
-
 function addRoom()
 {
     room_name = document.getElementById("room_name").value;
@@ -41,3 +34,18 @@ function addRoom()
 
     window.location = "index.html";
 }
+
+function logout()
+{
+      localStorage.removeItem("user_name");
+      localStorage.removeItem("room_name");
+           window.location =  "index.html";
+}
+
+function redirectToRoomName()
+{
+    console.log(name);
+    localStorage.setItem("room_name", name);
+    window.location = "index.html";
+}
+
